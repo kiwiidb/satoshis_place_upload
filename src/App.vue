@@ -11,6 +11,7 @@
     <br>
     If you found this tool useful, please consider <a href="https://tippin.me/@kiwiidb"> tippin me some ⚡.</a>
     </p>
+    <br>
     <UploadSingleFile />
   </div>
 </template>
