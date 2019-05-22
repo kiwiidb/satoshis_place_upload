@@ -13,6 +13,7 @@
     </p>
     <br>
     <UploadSingleFile />
+    <FlashMessage></FlashMessage>
   </div>
 </template>
 

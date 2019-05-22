@@ -1,10 +1,10 @@
 <template>
   <div class="container">
     <div class="large-12 medium-12 small-12 cell">
-      <input type="radio" id="one" value="https://api.satoshis.place" v-model="spURL">
+      <input type="radio" id="one" value="https://win.lightning-lottery.com/upload" v-model="spURL">
       <label for="one">Mainnet</label>
       <br>
-      <input type="radio" id="two" value="https://testnet-api.satoshis.place" v-model="spURL">
+      <input type="radio" id="two" value="https://win.lightning-lottery.com/testnet_upload" v-model="spURL">
       <label for="two">Testnet</label>
       <br>
       <br>
@@ -46,7 +46,7 @@
     */
     data(){
       return {
-        spURL: 'https://api.satoshis.place',
+        spURL: 'https://win.lightning-lottery.com/upload',
         file: '',
         x: '450',
         y: '450',
@@ -76,10 +76,10 @@
             formData.append('y', this.y);
             formData.append('w', this.w);
             formData.append('h', this.h);
-                /*
+        /*
           Make the request to the POST /single-file URL
         */
-            axios.post( 'https://win.lightning-lottery.com/upload',
+            axios.post( this.spURL,
                 formData,
                 {
                 headers: {
@@ -92,7 +92,7 @@
               }
         })
         .catch(e => {
-          this.$flashMessage.error({
+          this.flashMessage.error({
           title: 'Something went wrong, stay craeful',
           message: e,
           icon: false,
