@@ -5,7 +5,7 @@
     <br>
     Upload your file and a QR-code / lightning invoice will appear (if all goes well).
     <br>
-    I do not charge any fees, the invoice is paid directly to Satoshi's Place.
+    I do not charge any fees, the invoice is paid directly to Satoshi's Place. As soon as you pay it, your image is published.
     <br>
     X and Y coordinates are for the top left corner. Works best with .jpg images.
     <br>
