@@ -7,8 +7,6 @@
       <input type="radio" id="two" value="https://win.lightning-lottery.com/testnet_upload" v-model="spURL">
       <label for="two">Testnet</label>
       <br>
-      <br>
-      <br>
       <label>File
         <input type="file" id="file" ref="file" v-on:change="handleFileUpload()"/>
       </label>
@@ -32,13 +30,18 @@
       <button v-on:click="submitFile()">Submit</button>
     </div>
     <br>
+    <div v-if="uploadInProgress == true" >
+    <b-spinner></b-spinner>
+    <br>
+    One moment please..
+    </div>
     <qrcode-vue v-show="invoice != ''" id="second" :value=invoice size=250></qrcode-vue>
     <a v-show="invoice != ''" v-bind:href="'lightning:'+ invoice" class="button">Open in wallet</a>
   </div>
 </template>
 
 <script>
-  import axios from 'axios'
+  import axios from 'axios';
   import QrcodeVue from 'qrcode.vue';
   export default {
     /*
@@ -52,20 +55,23 @@
         y: '450',
         w: '100',
         h: '100',
-        invoice: ''
+        uploadInProgress: false,
+        invoice: '',
       }
     },
     components: {
-    QrcodeVue
+    QrcodeVue,
   },
     methods: {
       /*
         Submits the file to the server
       */
+    
       submitFile(){
         /*
                 Initialize the form data
             */
+            this.uploadInProgress = true;
             let formData = new FormData();
 
             /*
@@ -89,6 +95,7 @@
             ).then(response =>{
               if (response.status == 200) {
                 this.invoice = response.data.invoice.paymentRequest
+                this.uploadInProgress = false
               }
         })
         .catch(e => {
