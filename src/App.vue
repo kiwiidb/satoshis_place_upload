@@ -13,6 +13,12 @@
     </p>
     <UploadSingleFile />
     <FlashMessage></FlashMessage>
+    <div class="footer">
+      <a style="margin-right: 1em;" href="https://lightninghackday.fulmo.org">Made as a project for the LN Hackday</a>  
+      <a style="margin-right: 1em;" href="https://twitter.com/kiwiidb">My Twitter</a>  
+      <a style="margin-right: 1em;" href="https://github.com/kiwiidb">My Github</a>
+      <a style="margin-right: 1em;" href="https://kiwiidb.github.io">My Homepage</a>
+    </div>
   </div>
 </template>
 
@@ -35,5 +41,14 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+.footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  background-color: #efefef;
+  text-align: center;
 }
 </style>

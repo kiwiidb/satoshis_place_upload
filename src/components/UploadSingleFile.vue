@@ -5,7 +5,7 @@
       <label for="one">Mainnet</label>
       <br>
       <input type="radio" id="two" value="https://win.lightning-lottery.com/testnet_upload" v-model="spURL">
-      <label for="two">Testnet</label>
+      <label for="two">Testnet (probably won't work)</label>
       <br>
       <label>File
         <input type="file" id="file" ref="file" v-on:change="handleFileUpload()"/>
